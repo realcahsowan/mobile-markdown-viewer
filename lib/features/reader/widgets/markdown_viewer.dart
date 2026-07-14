@@ -98,14 +98,14 @@ class MarkdownViewer extends StatelessWidget {
           decoration: TextDecoration.underline,
         ),
       ),
-      sizedImageBuilder: (uri, title, alt, height, width, chunkEvent) {
-        if (uri.toString().startsWith('http')) {
+      sizedImageBuilder: (config) {
+        if (config.uri.toString().startsWith('http')) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.network(
-                uri.toString(),
+                config.uri.toString(),
                 fit: BoxFit.contain,
                 errorBuilder: (_, __, ___) => Container(
                   height: 120,
