@@ -1,0 +1,22 @@
+# Flutter
+.dart_tool/
+.packages
+build/
+*.iml
+.idea/
+.vscode/
+*.lock
+
+# Android
+android/.gradle/
+android/app/build/
+android/local.properties
+*.keystore
+*.jks
+
+# macOS
+.DS_Store
+
+# Python (icon generation)
+__pycache__/
+*.pyc

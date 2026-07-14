@@ -1,0 +1,3 @@
+-keep class com.example.markdown_viewer.** { *; }
+-keep class com.flutter.** { *; }
+-dontwarn com.flutter.**
