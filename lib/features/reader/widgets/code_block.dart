@@ -43,7 +43,7 @@ class CodeBlockWidget extends StatelessWidget {
                     : AppColors.borderLight,
               ),
               child: Text(
-                language,
+                language!,
                 style: TextStyle(
                   fontSize: 12,
                   color: isDark

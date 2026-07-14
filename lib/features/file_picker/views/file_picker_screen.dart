@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../core/constants/app_constants.dart';
 import '../../reader/views/reader_screen.dart';
 import '../../editor/views/editor_screen.dart';
 import '../providers/file_picker_provider.dart';
@@ -185,7 +184,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             curve: Curves.easeInOut,
           );
         },
-        style: ButtonStyle(
+        style: const ButtonStyle(
           visualDensity: VisualDensity.compact,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),

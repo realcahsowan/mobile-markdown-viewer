@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:highlight/languages/all.dart' show allLanguages;
-import 'package:flutter_highlight/flutter_highlight.dart';
-import 'package:flutter_highlight/themes/github.dart';
-import 'package:flutter_highlight/themes/dracula.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'code_block.dart';
 
@@ -102,7 +98,7 @@ class MarkdownViewer extends StatelessWidget {
           decoration: TextDecoration.underline,
         ),
       ),
-      imageBuilder: (uri, title, alt) {
+      sizedImageBuilder: (uri, title, alt, height, width, chunkEvent) {
         if (uri.toString().startsWith('http')) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
@@ -142,12 +138,12 @@ class CodeBlockBuilder extends MarkdownElementBuilder {
 
   @override
   Widget? visitElementAfter(md.Element element, TextStyle? preferredStyle) {
-    final language = element.attributes['class']?.replaceAll('language-', '');
+    final lang = element.attributes['class']?.replaceAll('language-', '');
     final code = element.textContent;
 
     return CodeBlockWidget(
       code: code,
-      language: language,
+      language: lang,
       isDark: isDark,
     );
   }
