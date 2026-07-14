@@ -2,10 +2,9 @@ name: Build Android APK
 
 on:
   push:
+    tags:
+      - 'v*'
     branches: [main, master]
-    paths-ignore:
-      - '**.md'
-      - 'assets/**'
   pull_request:
     branches: [main, master]
   workflow_dispatch:
